@@ -51,7 +51,7 @@ namespace LibraryUI.Controllers
             }
             return Booksids.Count();
         }
-
+       
         private List<Books> GetBooks()
         {
             string json = new WebClient().DownloadString("http://localhost:5127/api/Library/Books");
@@ -212,8 +212,6 @@ namespace LibraryUI.Controllers
                 {
                     message = ex1.Message;
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -256,7 +254,10 @@ namespace LibraryUI.Controllers
                 return Json(new { Message = "Book already exists in cart" });
 
             }
-
+            if(Booksids.Count()==5)
+            {
+                return Json(new { Message = "Only 5 books can be added." });
+            }
             var url = "http://localhost:5127/api/Library/BookInStock?data=" + data;
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, url);
