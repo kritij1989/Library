@@ -1,0 +1,54 @@
+﻿@model List<Books>
+@{
+    ViewData["Title"] = "ReviewCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table>
+    <thead>
+    <th>
+        Book Name
+    </th>
+    <th>
+        Author Name
+    </th>
+    <th>
+        Action
+    </th>
+
+    </thead>
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>
+                @data.BookName
+            </td>
+            <td>
+                @data.Authorname
+            </td>
+            <td>
+                <input type="button" value="Delete" onclick="Delete(@data.Id)" />
+            </td>
+
+        </tr>
+    }
+</table>
+
+<script type="text/javascript">
+    function Delete(id) {
+
+        $.ajax({
+            type: "POST",
+            url: '/Home/Delete/' + id,
+            data: { 'id': id },
+            success: function (d) {
+                alert(d.message);
+                window.location.href = "/home/Review"; 
+            },
+            error: function () {
+                alert("Error while inserting data");
+            }
+        });
+    }
+</script>
+

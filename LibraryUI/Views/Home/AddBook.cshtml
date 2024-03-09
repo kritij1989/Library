@@ -1,0 +1,77 @@
+﻿@model List<Books>
+@{
+    ViewData["Title"] = "AddBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    @ViewBag.message;
+</div>
+<div>
+    @using (Html.BeginForm("AddBook", "Home"))
+    {
+        <table>
+            <tr>
+                <td>Book Name</td>
+                <td>
+                    <input type="text" name="bookname" />
+                </td>
+            </tr>
+            <tr>
+                <td>Author Name</td>
+                <td>
+                    <input type="text" name="authorname" />
+                </td>
+            </tr>
+            <tr>
+                <td>Qty</td>
+                <td>
+                    <input type="text" name="quantity" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Add Info</td>
+                <td>
+                    <input type="submit" value="Add Book" />
+                </td>
+            </tr>
+        </table>
+    }
+   
+</div>
+<table>
+    <thead>
+    <th>
+        Book Name
+    </th>
+    <th>
+        Author Name
+    </th>
+    <th>
+        Quantity
+    </th>
+    <th>
+        Remaining Qty
+    </th>
+ 
+    </thead>
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>
+                @data.BookName
+            </td>
+            <td>
+                @data.Authorname
+            </td>
+            <td>
+                @data.Quantity
+            </td>
+
+            <td>
+                @data.RemainingQty
+            </td>
+        </tr>
+    }
+    </table>

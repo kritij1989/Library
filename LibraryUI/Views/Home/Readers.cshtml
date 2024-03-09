@@ -1,0 +1,44 @@
+﻿@model List<Reader>
+
+    <div>If no user exists then please add from here</div>
+@using (Html.BeginForm("AddReader", "Home", FormMethod.Get))
+{
+    <input type="submit" value="Add Reader" name="Add" />
+}
+<div>
+</div>
+<div>
+    <table>
+        <thead>
+        <th>
+            Reader Name
+        </th>
+        <th>
+            Reader Address
+        </th>
+       
+        <th>
+            Action
+        </th>
+        </thead>
+        @foreach (var data in Model)
+        {
+            <tr>
+                <td>
+                    @data.ReaderName
+                </td>
+                <td>
+                    @data.ReaderAddress
+                </td>
+                
+                <td>
+                        <input type="submit" id=@data.Id value="Select User"/>
+                   
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+</div>

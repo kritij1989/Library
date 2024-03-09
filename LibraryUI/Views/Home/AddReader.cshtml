@@ -1,0 +1,37 @@
+﻿@model List<Reader>
+@{
+    ViewData["Title"] = "Reader";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Add Reader Info</h1>
+<div>
+    @using (Html.BeginForm("AddReader", "Home"))
+    {
+        <table>
+            <tr>
+                <td>Reader Name</td>
+                <td>
+                    <input type="text" name="name" />
+                </td>
+            </tr>
+            <tr>
+                <td>Reader Address</td>
+                <td>
+                    <input type="text" name="address" />
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Add Reader" />
+                    @ViewBag.message 
+                </td>
+            </tr>
+        </table>
+    }
+    
+
+</div>
+
+

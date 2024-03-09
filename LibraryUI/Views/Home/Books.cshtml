@@ -1,0 +1,81 @@
+﻿@model List<Books>
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Books</h1>
+@using (Html.BeginForm("Books", "Home"))
+{
+
+    <table>
+        <tr>
+            <td>Search Book by name or author</td>
+            <td><input type="text" name="search"> </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Search book">
+
+            </td>
+        </tr>
+    </table>
+}
+<br />
+
+<div>
+</div>
+<div>
+    <table>
+        <thead>
+        <th>
+            Book Name
+        </th>
+        <th>
+            Author Name
+        </th>
+
+        <th>
+            Action
+        </th>
+        </thead>
+        @foreach (var data in Model)
+        {
+            <tr>
+                <td>
+                    @data.BookName
+                </td>
+                <td>
+                    @data.Authorname
+                </td>
+
+                <td>
+                    @if (data.RemainingQty > 0)
+                    {
+                        <button id=@data.Id onclick="savedata(@data.Id)">Add To Cart</button>
+                    }
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+<script type="text/javascript">
+    function savedata(data)
+    {
+       
+        $.ajax({
+            type: "POST",
+            url: '/Home/AddCart/' + data,
+            data: { 'data': data },
+            success: function (d) {
+                alert(d.message);
+                window.location.href="/home/Books"
+            },
+            error: function () {
+                alert("Error while inserting data");
+            }
+        });
+    }
+</script>
