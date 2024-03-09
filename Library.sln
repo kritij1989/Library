@@ -5,9 +5,14 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "Library\Library.csproj", "{906A78E8-EA05-4FEE-A31E-BFF74D766B65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryUI", "LibraryUI\LibraryUI.csproj", "{221B70D2-2878-4ED1-9178-E59FFF571D07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryUI", "LibraryUI\LibraryUI.csproj", "{221B70D2-2878-4ED1-9178-E59FFF571D07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApis", "TestApis\TestApis.csproj", "{7022D838-A09C-4683-B30E-D6D98C497762}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApis", "TestApis\TestApis.csproj", "{7022D838-A09C-4683-B30E-D6D98C497762}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6C90EF80-4060-45AC-977C-E6EDE5CC2DEA}"
+	ProjectSection(SolutionItems) = preProject
+		Postman_testing = Postman_testing
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

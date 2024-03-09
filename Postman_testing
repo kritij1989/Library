@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "c3556477-4ec0-42e4-a4a1-b24adfb8fcd0",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18930671"
+	},
+	"item": [
+		{
+			"name": "BookMaster",
+			"item": [
+				{
+					"name": "GetBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5127/api/Library/Books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5127",
+							"path": [
+								"api",
+								"Library",
+								"Books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReaders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5127/api/Library/Readers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5127",
+							"path": [
+								"api",
+								"Library",
+								"Readers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddBook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"BookName\":\"Test\",\"Authorname\":\"Test1\",\"Quantity\":2}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5127/api/Library/AddBook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5127",
+							"path": [
+								"api",
+								"Library",
+								"AddBook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddReader",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"ReaderName\":\"Test Reader\",\"ReaderAddress\":\"Test address1\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5127/api/Library/AddReader",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5127",
+							"path": [
+								"api",
+								"Library",
+								"AddReader"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
